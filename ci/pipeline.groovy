@@ -1,5 +1,7 @@
 node {
     stage('Dockerizando') {
+
+        checkout scm
         
         sh "ls -l"
         docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
