@@ -17,7 +17,7 @@ node {
         
         //sh "docker ps -a"
         docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-            def customImage = docker.build("ruby/test:${env.BUILD_ID}")
+            def customImage = docker.build("fiturrizaga/rubytest:${env.BUILD_ID}")
             customImage.push()
         }
     }
