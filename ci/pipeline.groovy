@@ -9,3 +9,11 @@ proc.waitFor()
 println "Process exit code: ${proc.exitValue()}"
 println "Std Err: ${proc.err.text}"
 println "Std Out: ${proc.in.text}" 
+
+def command = "echo ${script.env}"
+def proc = command.execute()
+proc.waitFor()              
+
+println "Process exit code: ${proc.exitValue()}"
+println "Std Err: ${proc.err.text}"
+println "Std Out: ${proc.in.text}"
