@@ -4,6 +4,7 @@ node {
         checkout scm
         
         sh "ls -l"
+        sh "ls -l ../"
         sh "pwd"
         sh "cat script.sh"
         sh "docker ps -a"
