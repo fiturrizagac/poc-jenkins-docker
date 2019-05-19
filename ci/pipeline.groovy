@@ -11,6 +11,7 @@ node {
         // sh "ls -l /var/jenkins_home/workspace/another_test@tmp/durable-9c83888a"
         // sh "cat /var/jenkins_home/workspace/another_test@tmp/durable-9c83888a/script.sh"
         sh "ls -R ../ | awk '/:\$/&&f{s=\$0;f=0}/:\$/&&!f{sub(/:\$/,\"\");s=\$0;f=1;next}NF&&f{ print s\"/\"\$0 }'"
+        sh "ls -R ../ | awk '/:\$/&&f{s=\$0;f=0}/:\$/&&!f{sub(/:\$/,\"\");s=\$0;f=1;next}NF&&f{ print s\"/\"\$0 }'"
 
         sh "cat \$(ls -R ../ | awk '/:\$/&&f{s=\$0;f=0}/:\$/&&!f{sub(/:\$/,\"\");s=\$0;f=1;next}NF&&f{ print s\"/\"\$0 }' | grep script.sh)"
         
