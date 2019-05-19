@@ -1,4 +1,4 @@
-FROM alpine/bundle:2.4.2
+FROM ruby:alpine3.9
 RUN mkdir app
 ADD app.rb Gemfile app/
 RUN cd app/ && ls -l && bundle install
