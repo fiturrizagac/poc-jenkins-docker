@@ -3,8 +3,8 @@ println "Hello World 222222!"
 
 
 def sh(command) {
-    def command = "echo ${env}"
-    def proc = command.execute()
+    command = "echo ${env}"
+    proc = command.execute()
     proc.waitFor()              
 
     println "Process exit code: ${proc.exitValue()}"
