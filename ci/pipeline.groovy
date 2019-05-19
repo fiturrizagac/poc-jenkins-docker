@@ -1,18 +1,9 @@
-println "Hello World!"
-println "Hello World 222222!"
-
-
-// def sh(command) {
-//     command = "echo ${env}"
-//     proc = command.execute()
-//     proc.waitFor()              
-
-//     println "Process exit code: ${proc.exitValue()}"
-//     println "Std Err: ${proc.err.text}"
-//     println "Std Out: ${proc.in.text}"
-// }
-
-
-sh "echo holamundo"
-
-sh "echo ${script.env}"
+node {
+    stage('Dockerizando') {
+        
+        docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
+            def customImage = docker.build("ruby/test:${env.BUILD_ID}")
+            customImage.push()
+        }
+    }
+}
