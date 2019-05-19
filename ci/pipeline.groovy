@@ -13,6 +13,6 @@ println "Hello World 222222!"
 // }
 
 
-sh "echo $JAVA_HOME"
+sh "echo holamundo"
 
 sh "echo ${script.env}"
